@@ -11,8 +11,10 @@ import {
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { authService } from '../../services/authService';
+import { useRegistration } from '../../contexts/RegistrationContext';
 
 const SettingsScreen: React.FC = () => {
+  const { deleteRegistration } = useRegistration();
   const [biometricEnabled, setBiometricEnabled] = useState(false);
   const [biometricAvailable, setBiometricAvailable] = useState(false);
   const [supportedBiometrics, setSupportedBiometrics] = useState<any[]>([]);
@@ -120,6 +122,33 @@ const SettingsScreen: React.FC = () => {
                   text: 'Clear All',
                   style: 'destructive',
                   onPress: () => Alert.alert('Coming Soon', 'Clear all data feature will be available soon'),
+                },
+              ]
+            );
+          },
+        },
+        {
+          title: 'Reset Registration',
+          subtitle: 'Delete your digital identity and re-register',
+          icon: 'refresh',
+          destructive: true,
+          onPress: () => {
+            Alert.alert(
+              'Reset Registration',
+              'This will permanently delete your W3C digital identity, DID, and all associated credentials. You will need to re-register to use Sevis Wallet. This action cannot be undone.',
+              [
+                { text: 'Cancel', style: 'cancel' },
+                {
+                  text: 'Reset Registration',
+                  style: 'destructive',
+                  onPress: async () => {
+                    try {
+                      await deleteRegistration();
+                      Alert.alert('Success', 'Your registration has been reset. You will now need to register again.');
+                    } catch (error) {
+                      Alert.alert('Error', 'Failed to reset registration. Please try again.');
+                    }
+                  },
                 },
               ]
             );

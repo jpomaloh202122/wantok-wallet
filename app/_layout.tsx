@@ -6,6 +6,8 @@ import 'react-native-reanimated';
 
 import { useColorScheme } from '@/hooks/useColorScheme';
 import { WalletProvider } from '../src/contexts/WalletContext';
+import { RegistrationProvider } from '../src/contexts/RegistrationContext';
+import AppRoot from '../src/components/AppRoot';
 
 export default function RootLayout() {
   const colorScheme = useColorScheme();
@@ -19,14 +21,18 @@ export default function RootLayout() {
   }
 
   return (
-    <WalletProvider>
-      <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-        <Stack>
-          <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-          <Stack.Screen name="+not-found" />
-        </Stack>
-        <StatusBar style="auto" />
-      </ThemeProvider>
-    </WalletProvider>
+    <RegistrationProvider>
+      <WalletProvider>
+        <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
+          <AppRoot>
+            <Stack>
+              <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+              <Stack.Screen name="+not-found" />
+            </Stack>
+          </AppRoot>
+          <StatusBar style="auto" />
+        </ThemeProvider>
+      </WalletProvider>
+    </RegistrationProvider>
   );
 }
