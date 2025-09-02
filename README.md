@@ -1,50 +1,124 @@
-# Welcome to your Expo app 👋
+# Wantok Wallet - Digital Identity Wallet
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A premium cross-platform mobile wallet application built with React Native and Expo for storing Verifiable Credentials (VCs), payment cards, and ID documents securely on your device. Wantok Wallet features an elegant golden design inspired by freedom and security.
 
-## Get started
+## Features
 
-1. Install dependencies
+### 🔐 Security First
+- **Biometric Authentication**: Face ID, Touch ID, and fingerprint authentication
+- **Local Encryption**: All data encrypted and stored locally on device
+- **No Data Transmission**: Your sensitive information never leaves your device
+- **Secure Storage**: Uses Expo SecureStore and Keychain for maximum security
 
+### 📱 Wallet Management
+- **Verifiable Credentials**: Store and manage digital certificates and credentials
+- **Payment Cards**: Securely store credit cards, debit cards, membership cards
+- **ID Documents**: Digital storage of passports, driver's licenses, national IDs
+- **Organized Categories**: Intuitive categorization and search functionality
+
+### 🎨 User Experience
+- **Responsive Design**: Optimized for phones and tablets
+- **Cross-Platform**: Native iOS and Android experience
+- **Intuitive Interface**: Clean, modern design following platform conventions
+- **Accessibility**: Built with accessibility in mind
+
+## Tech Stack
+
+- **Framework**: React Native with Expo
+- **Navigation**: Expo Router with tab-based navigation
+- **Storage**: Expo SecureStore for encrypted local storage
+- **Authentication**: Expo Local Authentication (biometrics)
+- **Icons**: Expo Vector Icons (Ionicons)
+- **Language**: TypeScript for type safety
+
+## Installation & Setup
+
+### Prerequisites
+- Node.js (v14 or higher)
+- npm or yarn
+- Expo CLI
+- iOS Simulator (for iOS development) or Android Emulator
+
+### Getting Started
+
+1. **Install dependencies**
    ```bash
    npm install
    ```
 
-2. Start the app
-
+2. **Start the development server**
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+3. **Run on platforms**
+   ```bash
+   # iOS
+   npm run ios
+   
+   # Android
+   npm run android
+   
+   # Web
+   npm run web
+   ```
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Project Structure
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```
+WalletApp/
+├── app/                          # Expo Router pages
+│   ├── (tabs)/                   # Tab navigation screens
+│   │   ├── index.tsx            # Wallet home screen
+│   │   ├── credentials.tsx      # Verifiable credentials
+│   │   ├── cards.tsx           # Payment cards
+│   │   ├── ids.tsx             # ID documents
+│   │   └── settings.tsx        # App settings
+│   └── _layout.tsx             # Root layout
+├── src/                        # Source code
+│   ├── contexts/              # React contexts
+│   │   └── WalletContext.tsx  # Global wallet state
+│   ├── screens/               # Screen components
+│   ├── services/             # Business logic
+│   │   ├── secureStorage.ts # Encrypted storage service
+│   │   └── authService.ts   # Authentication service
+│   ├── types/               # TypeScript type definitions
+│   └── utils/              # Utility functions
+│       ├── responsive.ts   # Responsive design helpers
+│       └── theme.ts       # Design system & theme
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Security Architecture
 
-## Learn more
+### Data Storage
+- **Encryption**: All sensitive data is encrypted before storage
+- **Local Storage**: Data never leaves the device
+- **Secure Store**: Uses platform's secure storage (iOS Keychain, Android Keystore)
+- **Biometric Protection**: Optional biometric authentication for app access
 
-To learn more about developing your project with Expo, look at the following resources:
+### Authentication Flow
+1. User enables biometric authentication in settings
+2. App checks for biometric availability (Face ID, Touch ID, Fingerprint)
+3. User must authenticate to access wallet data
+4. Authentication expires after 5 minutes of inactivity
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+## Platform-Specific Features
 
-## Join the community
+### iOS
+- Face ID integration
+- iOS design language
+- Haptic feedback
+- iOS-specific permissions and privacy settings
 
-Join our community of developers creating universal apps.
+### Android
+- Fingerprint authentication
+- Material Design principles
+- Android-specific permissions
+- Edge-to-edge display support
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+## Privacy & Security
+
+- **No Data Collection**: The app doesn't collect any personal information
+- **Local Processing**: All operations happen locally on the device
+- **No Analytics**: No tracking or analytics SDKs included
+- **Encrypted Storage**: All sensitive data is encrypted using platform security
