@@ -42,7 +42,7 @@ class AuthService {
       }
 
       const result = await LocalAuthentication.authenticateAsync({
-        promptMessage: reason || 'Authenticate to access Wantok Wallet',
+        promptMessage: reason || 'Authenticate to access Sevis Wallet',
         cancelLabel: 'Cancel',
         fallbackLabel: 'Use Passcode',
         requireConfirmation: false,
@@ -83,7 +83,7 @@ class AuthService {
   async enableBiometricAuth(): Promise<boolean> {
     try {
       const authResult = await this.authenticateWithBiometrics(
-        'Enable biometric authentication for Wantok Wallet'
+        'Enable biometric authentication for Sevis Wallet'
       );
       
       if (authResult.success) {

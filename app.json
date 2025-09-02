@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "Wantok Wallet",
-    "slug": "wantok-wallet",
+    "name": "Sevis Wallet",
+    "slug": "sevis-wallet",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "wantokwallet",
+    "scheme": "seviswallet",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "primaryColor": "#F4C430",
@@ -13,7 +13,7 @@
     "ios": {
       "supportsTablet": true,
       "infoPlist": {
-        "NSFaceIDUsageDescription": "Wantok Wallet uses Face ID for secure authentication to access your digital credentials.",
+        "NSFaceIDUsageDescription": "Sevis Wallet uses Face ID for secure authentication to access your digital credentials.",
         "NSCameraUsageDescription": "Camera access is needed to scan QR codes and capture document images."
       }
     },

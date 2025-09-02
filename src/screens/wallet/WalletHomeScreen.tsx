@@ -93,7 +93,7 @@ const WalletHomeScreen: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.header}>
-        <Text style={styles.headerTitle}>Wantok Wallet</Text>
+        <Text style={styles.headerTitle}>Sevis Wallet</Text>
         <TouchableOpacity style={styles.addButton}>
           <Ionicons name="add" size={24} color="#F4C430" />
         </TouchableOpacity>

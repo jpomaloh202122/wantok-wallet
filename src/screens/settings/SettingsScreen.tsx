@@ -75,7 +75,7 @@ const SettingsScreen: React.FC = () => {
         {
           title: `${getBiometricTypeText()} Authentication`,
           subtitle: biometricAvailable 
-            ? `Use ${getBiometricTypeText().toLowerCase()} to secure Wantok Wallet`
+            ? `Use ${getBiometricTypeText().toLowerCase()} to secure Sevis Wallet`
             : 'Not available on this device',
           icon: 'finger-print',
           component: biometricAvailable ? (
@@ -95,13 +95,13 @@ const SettingsScreen: React.FC = () => {
       options: [
         {
           title: 'Export Data',
-          subtitle: 'Export your Wantok Wallet data',
+          subtitle: 'Export your Sevis Wallet data',
           icon: 'download',
           onPress: () => Alert.alert('Coming Soon', 'Export feature will be available soon'),
         },
         {
           title: 'Import Data',
-          subtitle: 'Import Wantok Wallet data from file',
+          subtitle: 'Import Sevis Wallet data from file',
           icon: 'cloud-upload',
           onPress: () => Alert.alert('Coming Soon', 'Import feature will be available soon'),
         },

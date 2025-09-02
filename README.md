@@ -1,6 +1,6 @@
-# Wantok Wallet - Digital Identity Wallet
+# Sevis Wallet - Digital Identity Wallet
 
-A premium cross-platform mobile wallet application built with React Native and Expo for storing Verifiable Credentials (VCs), payment cards, and ID documents securely on your device. Wantok Wallet features an elegant golden design inspired by freedom and security.
+A premium cross-platform mobile wallet application built with React Native and Expo for storing Verifiable Credentials (VCs), payment cards, and ID documents securely on your device. Sevis Wallet features an elegant golden design inspired by freedom and security.
 
 ## Features
 
